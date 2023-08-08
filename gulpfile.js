@@ -14,18 +14,18 @@ const watch = (cb) => {
 }
 
 const start = (cb) => {
-  nodemon({
-    script: 'built/index.js',
-    done: cb,
-    watch: 'built/**/*',
-  })
+  // nodemon({
+  //   script: 'built/bubble.js',
+  //   watch: 'built/**/*',
+  //   done: cb,
+  // })
 }
 
 const del = (cb) => {
-  execFile('rm -rf built', () => {
+  execFile('rm', ['-rf', 'built'], () => {
     cb()
   })
 }
 
-exports.dev = gulp.series(del, gulp.parallel(gulp.series(build, start), watch))
+exports.dev = gulp.series(del, watch, build, start)
 exports.build = gulp.series(del, build)
