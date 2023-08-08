@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "target": "ES6",
+    "allowJs": true,
+    "outDir": "built",
+    "removeComments": true
+  },
+  "include": ["./src/**/*"],
+  "exclude": ["./built", "node_modules", "./src/**/*.test.ts"]
+}
